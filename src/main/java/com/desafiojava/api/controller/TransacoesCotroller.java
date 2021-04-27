@@ -13,7 +13,7 @@ import com.desafiojava.api.services.TransacoesServ;
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @Controller
-@RequestMapping("/Transacoes")
+@RequestMapping("Transacoes")
 public class TransacoesCotroller {
 
 	@Autowired
