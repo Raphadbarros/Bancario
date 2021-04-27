@@ -36,16 +36,16 @@ public class TransacoesCotroller {
 
 	}
 
-	@RequestMapping(value = "/Traferir", method = RequestMethod.POST)
+	@RequestMapping(value = "/Transferir", method = RequestMethod.POST)
 	public ResponseEntity<String> Transferir(@RequestBody Transacoes transacoes) throws ObjectNotFoundException {
 		if (transacoes.getValor() <= 0 && transacoes.getContaOrigem() != transacoes.getDestino()) {
 			ResponseEntity<String> response = ResponseEntity.ok().body("Valor invalido");
 			return response;
 		} else {
 			transacoesserv.transferir(transacoes);
-			ResponseEntity<String> response = ResponseEntity.ok().body("Tranfeencia efetada com sucesso");
+			ResponseEntity<String> response = ResponseEntity.ok().body("Transferencia efetada com sucesso");
 			if(response == null) {
-				response = ResponseEntity.ok().body("Não foi possivel efetuar a Tranfeencia");
+				response = ResponseEntity.ok().body("Não foi possivel efetuar a Transferencia");
 			}
 			return response;
 		}
